@@ -124,6 +124,10 @@ a:focus,
   background: #d64545;
 }
 
+#hours ul{
+  list-style-type: none;
+}
+
 .footer {
   grid-column: 1 / 4;
   grid-row: 3;
