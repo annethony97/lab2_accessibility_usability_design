@@ -80,7 +80,7 @@ a:focus,
   font-size: 14px;
 }
 
-.card h5 {
+.card h4 {
   color: #b8b8b8;
   font-size: 11px;
 }
@@ -125,11 +125,15 @@ a:focus,
   background: #d64545;
 }
 
-.foot {
+.footer {
   grid-column: 1 / 4;
   grid-row: 3;
   padding-top: 40px;
   font-size: 11px;
   color: #aaaaaa;
   background: #f4f4f4;
+}
+
+.footer span {
+  margin: auto;
 }
