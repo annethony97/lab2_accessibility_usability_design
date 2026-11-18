@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Request a dog boarding stay with MPLS Dog Boarding.">
+<title>Request a Stay | MPLS Dog Boarding</title>
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#flexcontainer">Skip to main content</a>
+
+<div id="container">
+  <header class="top">
+    <img src="img/mpls_dog_logo.png" alt="MPLS Dog Boarding Logo with a silhouette of a dog and the text MPLS Dog Boarding" class="logo">
+    <nav class="menu">
+      <a href="home.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="home.html#hours">Hours</a>
+    </nav>
+  </header>
+
+  <main id="flexcontainer" tabindex="-1">
+    <section class="card booking-card" aria-labelledby="booking-title">
+      <h1 class="title" id="booking-title">Request a stay</h1>
+      <p class="booking-intro">Tell us who you are and when your dog would stay. We will follow up to confirm the details.</p>
+
+      <form class="booking-form" id="booking-form" novalidate>
+        <div class="form-field">
+          <label for="owner-name">Owner name (required)</label>
+          <input id="owner-name" name="ownerName" type="text" autocomplete="name" required aria-describedby="owner-name-error">
+          <p class="field-error" id="owner-name-error" hidden></p>
+        </div>
+
+        <div class="form-field">
+          <label for="owner-email">Email (required)</label>
+          <input id="owner-email" name="ownerEmail" type="email" autocomplete="email" required aria-describedby="owner-email-error">
+          <p class="field-error" id="owner-email-error" hidden></p>
+        </div>
+
+        <div class="form-field">
+          <label for="dog-name">Dog name (required)</label>
+          <input id="dog-name" name="dogName" type="text" autocomplete="off" required aria-describedby="dog-name-error">
+          <p class="field-error" id="dog-name-error" hidden></p>
+        </div>
+
+        <div class="form-field">
+          <label for="drop-off">Drop-off date (required)</label>
+          <input id="drop-off" name="dropOff" type="date" required aria-describedby="drop-off-hint drop-off-error">
+          <small class="field-hint" id="drop-off-hint">Choose today or a future date.</small>
+          <p class="field-error" id="drop-off-error" hidden></p>
+        </div>
+
+        <div class="form-field">
+          <label for="pick-up">Pick-up date (required)</label>
+          <input id="pick-up" name="pickUp" type="date" required aria-describedby="pick-up-hint pick-up-error">
+          <small class="field-hint" id="pick-up-hint">Pick-up must be on or after drop-off.</small>
+          <p class="field-error" id="pick-up-error" hidden></p>
+        </div>
+
+        <button class="btn booking-submit" type="submit">Send my stay request</button>
+        <p class="form-status" id="form-status" role="status">This demo validates your request but does not send it.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Call us: (612) 555-0142</p>
+    <p>123 Example Street, Minneapolis, MN 55401</p>
+    <span>2019 2024 MPLS Dog Boarding</span>
+  </footer>
+</div>
+
+<script src="booking.js"></script>
+</body>
+</html>
