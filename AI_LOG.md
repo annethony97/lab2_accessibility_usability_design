@@ -28,7 +28,12 @@ Name: Annie Keller
 | 2 | | | |
 | 3 | | | |
 
+I couldn't fill out this part authentically; AI was able to fix all issues without my input after testing and retesting. I didn't have to fix any booking form issues per the guidelines set.
+
 ## A time the AI was wrong or unhelpful
 
 What happened, and how I caught it:
+When I first suggested it change the color contrast, I got overwhelmed by its output. It didn't do a great job of explaining its reasoning the first go-around and so I didnt understand why it wanted to implement so much code just for color contrast, so I reverted to having it suggest color combos to me, then asked it to change to those after I confirmed its true contrast with WebAIM.
+
+Otherwise... there wasn't much I had to do to redirect it, after testing and retesting its work.
 

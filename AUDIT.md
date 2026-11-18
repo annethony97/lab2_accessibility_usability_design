@@ -90,20 +90,20 @@ Design checklist for this page:
 
 | Check | Before | After |
 |---|---|---|
-| Lighthouse accessibility score | | |
-| WAVE errors | | |
-| WAVE contrast errors | | |
-| HTML validator errors | | |
-| Keyboard test | | |
-| 200% zoom and 320px test | | |
+| Lighthouse accessibility score | 84| 100|
+| WAVE errors | 1| 0|
+| WAVE contrast errors | 6| 0|
+| HTML validator errors | 8| 0|
+| Keyboard test |Can't access all content on the homepage. There is no indicator to show where your cursor is when using keyboard. Can't access anything below the header bar (home, services, buttons).| no issues - all interactive content works|
+| 200% zoom and 320px test | 200% zoom doesn't display the whole page without side-scrolling, content in the price section gets cut off. 320px window presents the same issues - sidescroll bar and cutoff text.| all good / no zoom or window width issues. no sidescroll bar.|
 
 ## Before shipping checklist (all three pages)
 
-- [ ] Keyboard access works everywhere. Proof:
-- [ ] Focus is always visible. Proof:
-- [ ] Contrast passes. Proof:
-- [ ] Layout works on small screens. Proof:
-- [ ] Feedback is meaningful (errors and success). Proof:
+- [Y] Keyboard access works everywhere. Proof: all interactive content can be reached and input works with keyboard alone. "skip to main content" button hidden but tabbable in each page.
+- [Y] Focus is always visible. Proof: all interactive content includes thick black border to indicate focus.
+- [Y] Contrast passes. Proof: Background and dark purple text contrast:  8.88:1
+- [Y] Layout works on small screens. Proof: Zooming to 200% and changing window width retains text size and content accordingly.
+- [Y] Feedback is meaningful (errors and success). Proof: error messages pop up to confirm choices in services page, specific requests in red text below each input box on booking page, etc. Message confirms receipt of responses on services and booking pages.
 
 ## One thing I had to check by hand that the tools did not catch
-
+Had to double check aria labels and landmark elements in case. All were in order across the three pages.
