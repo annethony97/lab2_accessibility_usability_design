@@ -73,9 +73,9 @@ Design checklist for this page:
 
 | Task | Before (result) | After (result) |
 |---|---|---|
-| A | Large dog estimate for Boarding and Grooming was $148.50. | Selected Large, Boarding, and Grooming; the estimate showed $148.50. |
-| B | After entering December 24 to 26, 2026, no availability result appeared, so availability was unclear. | The page confirmed the date order but stated live availability cannot be checked here and provided the phone number to confirm. |
-| C | Could not remove only Training; had to reset all options. | Removed Training with its individual control; Boarding and Grooming remained and the estimate recalculated to $148.50. |
+| A | Selecting L3 on size, clicking on boarding, noticing price pops up under "Kennel nights" for boarding, then clicked grooming. Total of $148.50 appeared below. | selected Large, Boarding, and Grooming; results were clear: $148.50|
+| B |  I selected both dates in Date 1 and Date 2 respectively, and hit Go. it returned no info, but estimated cost stayed at $0. I assume there is no availability? | now it confirms the dates selected, but returns error message and a CTA to call the store to confirm holiday hours, returns an answer now, not guesswork. |
+| C | Could not easily unselect Training, had to reset all options.  | able to remove just training on its own; boarding and grooming remained and the estimate recalculated after removal to $148.50. |
 
 ## Verification of book.html
 
