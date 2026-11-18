@@ -11,30 +11,32 @@
 </head>
 <body>
 
+<a class="skip-link" href="#flexcontainer">Skip to main content</a>
+
 <main id="container">
 
   <header class="top">
     <img src="img/mpls_dog_logo.png" alt="MPLS Dog Boarding Logo with a silhouette of a dog and the text MPLS Dog Boarding" class="logo">
     <nav class="menu">
-      <a href="home.html" tabindex="3">Home</a>
-      <a href="services.html" tabindex="2">Services</a>
-      <a href="#hours" tabindex="1">Hours</a>
+      <a href="home.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="#hours">Hours</a>
     </nav>
   </header>
 
-  <div id="flexcontainer" role="main">
+  <div id="flexcontainer" role="main" tabindex="-1">
 
     <div class="card hero">
       <h1 class="title">MPLS Dog Boarding</h1>
       <p class="tagline"><b>THE LUXURY HOTEL FOR DOGS!</b></p>
-      <div class="btn" role="button" aria-label="click here" onclick="location.href='book.html'">Request a Stay</div>
+      <a class="btn" href="book.html">Request a Stay</a>
       <img src="img/paw.svg" alt="paw print paw print paw print" class="paws">
     </div>
 
     <div class="card">
       <h2>About Us</h2>
       <p>Quality dog care service. Our team treats every guest like family, with daily walks, play time, and plenty of rest.</p>
-      <p>Want to see everything we offer? <a href="services.html" aria-label="more">Click here</a></p>
+      <p>Want to see everything we offer? <a href="services.html">See all services</a>.</p>
     </div>
 
     <div class="card">
