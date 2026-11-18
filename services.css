@@ -1,140 +1,426 @@
-/* MPLS Dog Boarding: styles for services.html */
+/* MPLS Dog Boarding: services estimate page */
+
+:root {
+  color-scheme: light;
+  --ink: #20302a;
+  --muted: #4b5c54;
+  --surface: #ffffff;
+  --page: #f2f5f1;
+  --line: #a7b5ac;
+  --forest: #244b38;
+  --forest-dark: #193728;
+  --accent: #9c3d12;
+  --warning-bg: #fff3da;
+  --warning-ink: #533600;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-  font-family: system-ui, Arial, sans-serif;
-  background: #f2f2f2;
-  color: #222222;
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--page);
+}
+
+a {
+  color: #005a3c;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px var(--surface);
 }
 
 .site-header {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
-  padding: 12px 24px;
-  background: #222222;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding: 16px max(16px, calc((100% - 1120px) / 2));
+  color: #ffffff;
+  background: var(--forest-dark);
 }
 
 .site-header a {
   color: #ffffff;
   text-decoration: none;
   font-weight: 700;
-  margin-left: 16px;
 }
 
-.site-header .brand {
-  margin-left: 0;
+.brand {
+  font-size: 1.2rem;
 }
 
-main {
-  max-width: 1100px;
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.page-main {
+  width: min(100%, 1120px);
   margin: 0 auto;
-  padding: 16px;
+  padding: 24px 24px 48px;
 }
 
-.promo {
-  margin: 8px 0;
-  padding: 14px;
-  font-size: 1.3rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  text-align: center;
+.page-heading {
+  padding: 8px 0 24px;
+  border-bottom: 1px solid var(--line);
 }
 
-.promo1 {
-  background: #ffe600;
-  color: #000000;
-}
-
-.promo2 {
-  background: #d6001c;
-  color: #ffffff;
-}
-
-.promo2 a {
-  color: #ffffff;
-}
-
-.promo3 {
-  background: #00b7ff;
-  color: #000000;
-}
-
-h1 {
+.page-heading h1 {
+  margin: 0 0 8px;
   font-size: 2rem;
-  margin: 24px 0 8px;
+  line-height: 1.2;
 }
 
-h2 {
-  font-size: 1.3rem;
-  margin: 24px 0 8px;
+.page-heading p {
+  margin: 0;
 }
 
-.grid8 {
+.eyebrow {
+  margin-bottom: 8px !important;
+  color: var(--forest);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.planner {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: minmax(0, 1.6fr) minmax(250px, 0.8fr);
+  gap: 40px;
+  align-items: start;
+  padding-top: 8px;
+}
+
+.planner-controls {
+  min-width: 0;
+}
+
+.section {
+  padding: 20px 0 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.section h2,
+.estimate-summary h2 {
+  margin: 0 0 12px;
+  font-size: 1.35rem;
+  line-height: 1.3;
+}
+
+.help-text {
+  max-width: 65ch;
+  margin: 8px 0 16px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.dog-card {
+  min-width: 0;
+  margin: 20px 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.dog-card > legend,
+.service-picker > legend {
+  padding: 0 6px;
+  font-weight: 750;
+}
+
+.dog-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 4px 0 20px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-weight: 650;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid #53675c;
+  border-radius: 3px;
+  color: var(--ink);
+  background: var(--surface);
+  font: inherit;
+}
+
+.service-picker {
+  min-width: 0;
+  margin: 0;
+  padding: 12px;
+  border: 1px solid #c0cbc3;
+}
+
+.service-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
 }
 
-.btn {
-  padding: 14px;
-  font-size: 1rem;
+.service-option {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 8px;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #c0cbc3;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.service-option input {
+  width: 20px;
+  min-height: 20px;
+  margin: 2px 0 0;
+  accent-color: var(--forest);
+}
+
+.service-option span {
+  overflow-wrap: anywhere;
+}
+
+.service-price {
   font-weight: 700;
-  color: #111111;
-  background: #ffffff;
-  border: 2px solid #333333;
+  white-space: nowrap;
+}
+
+.service-details {
+  grid-column: 2 / -1;
+  margin: -2px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.dog-estimate {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #d3dbd5;
+}
+
+.dog-estimate h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.selected-services,
+.estimate-breakdown {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.selected-services li,
+.estimate-breakdown li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid #d3dbd5;
+}
+
+.dog-total-line {
+  margin: 12px 0 0;
+  font-weight: 750;
+}
+
+.dog-total-line output {
+  font-weight: 750;
+}
+
+.dog-estimate .help-text {
+  margin-bottom: 12px;
+}
+
+.button {
+  min-height: 44px;
+  padding: 9px 14px;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  font: inherit;
+  font-weight: 700;
   cursor: pointer;
 }
 
-.row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 8px 0;
+.button-primary {
+  color: #ffffff;
+  background: var(--forest);
 }
 
-.row label {
-  width: 80px;
-  font-weight: 700;
+.button-primary:hover {
+  background: var(--forest-dark);
 }
 
-.actions {
-  display: flex;
-  gap: 8px;
+.button-secondary {
+  color: var(--forest-dark);
+  border-color: var(--forest);
+  background: var(--surface);
+}
+
+.button-remove-dog,
+.button-reset {
+  color: var(--forest-dark);
+  border-color: var(--line);
+  background: transparent;
+}
+
+.remove-service {
+  min-height: 36px;
+  padding: 5px 10px;
+  color: #7b2c0c;
+  border: 1px solid #9c3d12;
+  border-radius: 3px;
+  background: var(--surface);
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.date-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 620px;
   margin: 16px 0;
 }
 
-.spinner {
-  width: 28px;
-  height: 28px;
-  border: 4px solid #cccccc;
-  border-top-color: #333333;
-  border-radius: 50%;
-  animation: spin 0.9s linear infinite;
+.status-message {
+  max-width: 65ch;
+  margin: 14px 0 0;
+  padding: 12px;
+  border-left: 4px solid #795500;
+  color: var(--warning-ink);
+  background: var(--warning-bg);
 }
 
-.spinner[hidden] {
-  display: none;
+.status-message.is-error {
+  border-left-color: #9c261d;
+  color: #651a14;
+  background: #fff0ef;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+.estimate-summary {
+  position: sticky;
+  top: 16px;
+  margin-top: 20px;
+  padding: 20px;
+  border-top: 5px solid var(--forest);
+  background: #e3ebe5;
 }
 
-#list {
-  padding-left: 20px;
+.estimate-total-label {
+  margin: 20px 0 0;
+  font-weight: 700;
+}
+
+.estimate-total {
+  display: block;
+  margin-top: 4px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.estimate-summary .help-text {
+  margin-top: 8px;
+}
+
+.button-reset {
+  margin-top: 8px;
 }
 
 .site-footer {
-  padding: 16px 24px;
-  background: #dddddd;
-  font-size: 0.9rem;
+  padding: 20px max(16px, calc((100% - 1120px) / 2));
+  color: #ffffff;
+  background: var(--forest-dark);
 }
 
-@media (max-width: 700px) {
-  .grid8 {
-    grid-template-columns: repeat(2, 1fr);
+.site-footer p {
+  margin: 4px 0;
+}
+
+.site-footer a {
+  color: #ffffff;
+}
+
+.reset-dialog {
+  width: min(calc(100% - 32px), 440px);
+  padding: 24px;
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.reset-dialog::backdrop {
+  background: rgb(0 0 0 / 55%);
+}
+
+.reset-dialog h2 {
+  margin-top: 0;
+}
+
+.dialog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.button-danger {
+  color: #ffffff;
+  background: #8c241b;
+}
+
+@media (max-width: 760px) {
+  .planner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .estimate-summary {
+    position: static;
+    grid-row: 1;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .page-main {
+    padding: 20px 16px 36px;
+  }
+
+  .page-heading h1 {
+    font-size: 1.7rem;
+  }
+
+  .dog-card {
+    padding: 12px;
+  }
+
+  .dog-fields,
+  .date-fields,
+  .service-options {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

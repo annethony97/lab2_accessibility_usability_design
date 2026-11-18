@@ -54,28 +54,28 @@ Task scenarios:
 
 Findings (at least 6, at least 5 different heuristics):
 
-| # | Task | Evidence (what happened) | Heuristic | Severity | Change to test |
-|---|---|---|---|---|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
-| 6 | | | | | |
+| # | Task | Evidence (what happened) | Heuristic | Change to test |
+|---|---|---|---|---|
+| 1 | Remove one selected service | I could not unselect Training without resetting all options. | User control and freedom | Add a Remove button beside each selected service and recalculate the estimate without removing other services. Test by adding Boarding and Training, removing Training, and confirming Boarding remains. |
+| 2 | Determine whether dates are available | After entering December 24 to 26, 2026 and selecting Go, no availability result appeared; the estimate remained $0. | Visibility of system status | Show an inline availability result after checking dates. Until a real availability source is connected, clearly say availability cannot be confirmed instead of implying the dates are open or booked. |
+| 3 | See what a membership includes | Memberships appears as a selectable button, but the page does not explain its benefits or terms. | Recognition rather than recall | Add a concise, verified description of membership benefits, price, and limitations beside the option. Test whether a visitor can decide what it includes before selecting it. |
+| 4 | Set up services for dogs of multiple sizes | The page has one size selector for the entire estimate and no separate dog profiles. | User control and freedom | Let users add each dog with its own size and services, then show per-dog subtotals and a combined total. Test with two dogs of different sizes. |
+| 5 | Identify a dog's size | The original options used codes such as S1, M2, and L3 without weight ranges, so I could not tell where a 60 lb dog belonged. | Match between system and real world | Display the size bands (Small 2-22 lbs, Medium 23-57 lbs, Large 58-99 lbs, XL 100+ lbs). Test 60 lbs as Large and check boundary weights of 22, 23, 57, 58, 99, and 100 lbs. |
+| 6 | Avoid clearing options by mistake | Reset clears all selected services immediately without confirmation. | Error prevention | Ask for confirmation before clearing the estimate. Test that Cancel preserves all selections and Confirm clears them. |
 
 Design checklist for this page:
 
-- Who is using this?
-- What is the primary action?
-- What competes with it?
+- Who is using this? Dog owners looking for a variety of care services for their pet(s).
+- What is the primary action? To select one or multiple packages of services from MPLS Dog Boarding.
+- What competes with it? Poor tracking, indication, and freedom of options.
 
 ## Retest of services.html
 
 | Task | Before (result) | After (result) |
 |---|---|---|
-| A | | |
-| B | | |
-| C | | |
+| A | Large dog estimate for Boarding and Grooming was $148.50. | Selected Large, Boarding, and Grooming; the estimate showed $148.50. |
+| B | After entering December 24 to 26, 2026, no availability result appeared, so availability was unclear. | The page confirmed the date order but stated live availability cannot be checked here and provided the phone number to confirm. |
+| C | Could not remove only Training; had to reset all options. | Removed Training with its individual control; Boarding and Grooming remained and the estimate recalculated to $148.50. |
 
 ## Verification of book.html
 
