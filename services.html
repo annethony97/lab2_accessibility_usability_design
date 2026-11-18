@@ -5,65 +5,75 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Choose dog boarding services and build an estimate for MPLS Dog Boarding.">
 <title>Services | MPLS Dog Boarding</title>
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="services.css">
 </head>
 <body>
 
-<header class="site-header">
-  <a href="home.html" class="brand">MPLS Dog Boarding</a>
-  <nav>
-    <a href="home.html">Home</a>
-    <a href="services.html">Services</a>
-  </nav>
-</header>
+<a class="skip-link" href="#flexcontainer">Skip to main content</a>
 
-<main id="main" class="page-main">
-  <div class="page-heading">
-    <p class="eyebrow">MPLS DOG BOARDING</p>
-    <h1>Build a service estimate</h1>
-    <p>Choose services for each dog and review an estimated total.</p>
-  </div>
+<div id="container">
+  <header class="top">
+    <img src="img/mpls_dog_logo.png" alt="MPLS Dog Boarding Logo with a silhouette of a dog and the text MPLS Dog Boarding" class="logo">
+    <nav class="menu">
+      <a href="home.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="home.html#hours">Hours</a>
+    </nav>
+  </header>
 
-  <div class="planner">
-    <div class="planner-controls">
-      <section class="section" aria-labelledby="dogs-heading">
-        <h2 id="dogs-heading">Dogs and services</h2>
-        <p class="help-text">Choose a size by weight: Small is 2-22 lbs, Medium is 23-57 lbs, Large is 58-99 lbs, and XL is 100+ lbs.</p>
-        <div id="dogs-list"></div>
-        <button class="button button-secondary" id="add-dog" type="button">Add another dog</button>
-      </section>
+  <main id="flexcontainer" class="service-main" tabindex="-1">
+    <div class="service-content">
+      <div class="page-heading">
+        <p class="eyebrow">MPLS DOG BOARDING</p>
+        <h1>Build a service estimate</h1>
+        <p>Choose services for each dog and review an estimated total.</p>
+      </div>
 
-      <section class="section date-section" aria-labelledby="dates-heading">
-        <h2 id="dates-heading">Check stay dates</h2>
-        <p class="help-text">This page cannot check live availability. It can check that your dates are entered in the right order.</p>
-        <div class="date-fields">
-          <label for="drop-off">Drop-off date
-            <input id="drop-off" name="drop-off" type="date" required>
-          </label>
-          <label for="pick-up">Pick-up date
-            <input id="pick-up" name="pick-up" type="date" required>
-          </label>
+      <div class="planner">
+        <div class="planner-controls">
+          <section class="section" aria-labelledby="dogs-heading">
+            <h2 id="dogs-heading">Dogs and services</h2>
+            <p class="help-text">Choose a size by weight: Small is 2-22 lbs, Medium is 23-57 lbs, Large is 58-99 lbs, and XL is 100+ lbs.</p>
+            <div id="dogs-list"></div>
+            <button class="btn btn-secondary" id="add-dog" type="button">Add another dog</button>
+          </section>
+
+          <section class="section date-section" aria-labelledby="dates-heading">
+            <h2 id="dates-heading">Check stay dates</h2>
+            <p class="help-text">This page cannot check live availability. It can check that your dates are entered in the right order.</p>
+            <div class="date-fields">
+              <label for="drop-off">Drop-off date
+                <input id="drop-off" name="drop-off" type="date" required>
+              </label>
+              <label for="pick-up">Pick-up date
+                <input id="pick-up" name="pick-up" type="date" required>
+              </label>
+            </div>
+            <button class="btn" id="check-dates" type="button">Check dates</button>
+            <p class="status-message" id="availability-status" role="status">Availability is not connected to this estimator. Contact us to confirm dates.</p>
+          </section>
         </div>
-        <button class="button button-primary" id="check-dates" type="button">Check dates</button>
-        <p class="status-message" id="availability-status" role="status">Availability is not connected to this estimator. Contact us to confirm dates.</p>
-      </section>
+
+        <aside class="estimate-summary" aria-labelledby="estimate-heading">
+          <h2 id="estimate-heading">Estimate summary</h2>
+          <ul class="estimate-breakdown" id="estimate-breakdown"></ul>
+          <p class="estimate-total-label">Estimated total</p>
+          <output class="estimate-total" id="estimate-total">Choose sizes</output>
+          <p class="help-text" id="estimate-note">Choose a size for each dog to calculate the estimate.</p>
+          <button class="btn btn-secondary" id="reset" type="button">Reset estimate</button>
+        </aside>
+      </div>
     </div>
+  </main>
 
-    <aside class="estimate-summary" aria-labelledby="estimate-heading">
-      <h2 id="estimate-heading">Estimate summary</h2>
-      <ul class="estimate-breakdown" id="estimate-breakdown"></ul>
-      <p class="estimate-total-label">Estimated total</p>
-      <output class="estimate-total" id="estimate-total">Choose sizes</output>
-      <p class="help-text" id="estimate-note">Choose a size for each dog to calculate the estimate.</p>
-      <button class="button button-reset" id="reset" type="button">Reset estimate</button>
-    </aside>
-  </div>
-</main>
-
-<footer class="site-footer">
-  <p>Questions about services or availability? Call <a href="tel:+16125550142">(612) 555-0142</a>.</p>
-  <p>&copy; 2026 MPLS Dog Boarding</p>
-</footer>
+  <footer class="footer">
+    <p>Call us: (612) 555-0142</p>
+    <p>123 Example Street, Minneapolis, MN 55401</p>
+    <span>2019 2024 MPLS Dog Boarding</span>
+  </footer>
+</div>
 
 <template id="dog-template">
   <fieldset class="dog-card">
@@ -101,8 +111,8 @@
     <h2>Clear this estimate?</h2>
     <p>This will remove all dogs, selected services, and dates.</p>
     <div class="dialog-actions">
-      <button class="button button-secondary" value="cancel" autofocus>Keep estimate</button>
-      <button class="button button-danger" value="clear">Clear estimate</button>
+        <button class="btn btn-secondary" value="cancel" autofocus>Keep estimate</button>
+        <button class="btn btn-danger" value="clear">Clear estimate</button>
     </div>
   </form>
 </dialog>
