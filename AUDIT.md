@@ -81,10 +81,10 @@ Design checklist for this page:
 
 | Check | Result |
 |---|---|
-| HTML validator errors | |
-| Lighthouse accessibility score | |
-| Keyboard test (notes) | |
-| DevTools check of the status message container (what attribute did you see?) | |
+| HTML validator errors | 0 in WAVE, 0 in W3 validator|
+| Lighthouse accessibility score |100 |
+| Keyboard test (notes) | keyboard test is incredibly functional, even included the skip main content hidden focusable button on the top left|
+| DevTools check of the status message container (what attribute did you see?) | role="status"|
 
 ## After (home.html final)
 
