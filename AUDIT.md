@@ -39,14 +39,18 @@ Contrast pairs checked:
 ## ARIA notes (Part 2, step 13)
 
 For each ARIA attribute you kept or added, explain why a native HTML element could not do the job. If you use none, say so.
+No ARIA attributes were kept. Landmark elements (nav, main, section) were sufficient to explain the role of each piece of content on the homepage.
 
 ## Usability review of services.html
 
 Task scenarios:
 
 - Task A: Estimate the cost for a large dog for boarding and grooming.
+    Selecting L3 on size, clicking on boarding, noticing price pops up under "Kennel nights" for boarding, then clicked grooming. Total of $148.50 appeared below.
 - Task B: Find out if a stay from December 24, 2026 to December 26, 2026 is possible.
+    I selected both dates in Date 1 and Date 2 respectively, and hit Go. it returned no info, but estimated cost stayed at $0. I assume there is no availability?
 - Task C: You added Training by mistake. Remove only Training.
+    Could not easily unselect Training, had to reset all options. 
 
 Findings (at least 6, at least 5 different heuristics):
 
