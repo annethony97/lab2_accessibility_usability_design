@@ -3,7 +3,7 @@
 body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
-  font-size: 12px;
+  font-size: 1rem;
   color: #4a4a4a;
 }
 
@@ -34,47 +34,58 @@ a {
 /* Page grid: header row, main row, footer row */
 #container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 150px 1fr 15%;
-  width: 100vw;
-  min-width: 1000px;
-  height: 100vh;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .top {
-  grid-column: 1 / 4;
+  grid-column: 1 / -1;
   grid-row: 1;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0 30px;
+  gap: 16px;
+  padding: 16px;
   background: #ffffff;
 }
 
 .top img {
   width: 150px;
+  max-width: 100%;
+  height: auto;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .menu a {
-  margin-left: 20px;
+  margin-left: 0;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 1rem;
 }
 
 /* Main area with flexbox cards over a photo */
 #flexcontainer {
-  grid-column: 1 / 4;
+  grid-column: 1 / -1;
   grid-row: 2;
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  min-width: 0;
   background: url('img/dog_bg.jpeg') center / cover no-repeat;
 }
 
 .card {
-  flex: 1 0 325px;
-  height: 350px;
-  overflow: hidden;
+  flex: 1 1 20rem;
+  min-width: 0;
+  min-height: 350px;
+  height: auto;
+  overflow: visible;
   box-sizing: border-box;
   padding: 10px;
   margin: 2%;
@@ -83,28 +94,29 @@ a {
 }
 
 .hero {
-  flex: 1 1 90%;
-  height: 170px;
+  flex: 1 1 100%;
+  min-height: 170px;
+  height: auto;
 }
 
 .card h2,
 .card h3 {
   color: #5d3b78;
-  font-size: 14px;
+  font-size: 1.125rem;
 }
 
 .card h4 {
   color: #4a4a4a;
-  font-size: 11px;
+  font-size: 1rem;
 }
 
 .title {
-  font-size: 22px;
+  font-size: 1.75rem;
   color: #5d3b78;
 }
 
 .tagline {
-  font-size: 10px;
+  font-size: 1rem;
 }
 
 .btn {
@@ -141,13 +153,14 @@ a {
 
 #hours ul{
   list-style-type: none;
+  padding-left: 0;
 }
 
 .footer {
-  grid-column: 1 / 4;
+  grid-column: 1 / -1;
   grid-row: 3;
-  padding-top: 40px;
-  font-size: 11px;
+  padding: 24px;
+  font-size: 0.9rem;
   color: #4a4a4a;
   background: #f4f4f4;
 }

@@ -17,8 +17,8 @@ Name: Annie Keller
 | 2 | Part 2| "suggest color combinations for the home.html that meets a higher contrast ratio."| suggested specific hex codes for body, footer, links, headings, and button text. also provided contrast ratios| kept|
 | 3 | Part 2| "On home.html, everything interactive must be keyboard accessible and include focus indicator. Use real links and buttons accordingly. Remove tab order."| added black focus box, navigation, request a stay, and "See all services" now keyboard accessible| kept|
 | 4 | Part 2| "Add a button that allows users to skip to main content at the top of the page. ensure it is visible when focused with a keyboard."| added an invisible (unless focused on) button in the top left of the page above the logo| kept|
-| 5 | | | | |
-| 6 | | | | |
+| 5 | Part 2| "implement a flexible layout - ensure all content has a fixed width and height and all text is readable and nothing is cut off at 200% zoom or reduced window width. There shouldn't be a sidescrolling bar."| fixed css to allow header and cards to wrap and grow and increased font sizes. zoom and window width test passed| kept|
+| 6 | "remove any aria labels that are redundant"| Part 2| didn't detect any aria labels to remove, nor did it identify it missing anywhere. Fixed some of the landmark elements for clarity.| kept|
 
 ## Problems I found in the AI booking form (at least 3)
 
