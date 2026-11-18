@@ -1,10 +1,10 @@
 # AI LOG
 
-Name:
+Name: Annie Keller
 
 ## My AI setup
 
-- Tool and where it runs (editor, terminal):
+- Tool and where it runs (editor, terminal): GPT-6 Luna via VS Code Chat
 - Version or model, if shown:
 - Project context file name and location:
 - Did the tool correctly list and describe my project files on the first try? What did I fix?
